@@ -1,10 +1,16 @@
 import MeetingTypeList from '@/components/MeetingTypeList';
 
 const Home = () => {
-  const now = new Date();
+  // const now = new Date();
 
-  const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
-  const date = (new Intl.DateTimeFormat('en-In', { dateStyle: 'full' })).format(now);
+  // const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+  // const date = (new Intl.DateTimeFormat('en-IN', { dateStyle: 'full' })).format(now);
+    const now = new Date();
+    const ISTOptions = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' };
+    const time = now.toLocaleTimeString('en-GB', ISTOptions);
+    const dateOptions = { timeZone: 'Asia/Kolkata', dateStyle: 'full' };
+    const date = (new Intl.DateTimeFormat('en-GB', dateOptions)).format(now);
+
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
